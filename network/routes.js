@@ -3,6 +3,6 @@
 
 const routes = ( routes ) => {
 
-    routes.use( '/' )
+    routes.use( 'app/' )
 
 }
