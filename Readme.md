@@ -3,4 +3,4 @@
 ***
 
 ## What is it ?
-This is a Blog about mathematics ( aritmetics, algebra, trigonometry, analytical trigonometry ), algorithm, data structure, phisics and articles about coding and computacional science.
+This is a Blog about mathematics ( aritmetics, algebra, trigonometry, analytical trigonometry, calculation, statistics ), algorithm, data structure, phisics and articles about coding and computacional science.

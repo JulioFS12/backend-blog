@@ -4,7 +4,7 @@ const { publicRoute, port, stringConnection } = require('./config');
 const dbConnection = require('./database');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const routes = require('./network/routes');s
+const routes = require('./network/routes');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,4 +16,4 @@ app.listen( port , () => {
     console.log(`Server running ${port}`);
 });
 
-// dbConnection( stringConnection );
+dbConnection( stringConnection );

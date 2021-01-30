@@ -3,6 +3,10 @@
 
 const routes = ( routes ) => {
 
-    routes.use( 'app/' )
+    routes.use( 'app/', () => {
+        
+    } )
 
 }
+
+module.exports = routes;

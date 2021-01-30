@@ -2,6 +2,8 @@ const database = require('mongoose');
 
 const dbConnection = ( stringConnection ) => {
 
+    console.log( stringConnection )
+
     database.connect( stringConnection, {
 
         useNewUrlParser: true,
