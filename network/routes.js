@@ -1,11 +1,9 @@
-
+const authentication = require('../components/authentication/networking');
 
 
 const routes = ( routes ) => {
 
-    routes.use( 'app/', () => {
-        
-    } )
+    routes.use( '/authentication', authentication);
 
 }
 
