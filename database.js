@@ -6,6 +6,7 @@ const dbConnection = ( stringConnection ) => {
 
         useNewUrlParser: true,
         useUnifiedTopology: true,
+        useCreateIndex: true,
 
     } )
     .then(res => console.log('DB connection success..!'))

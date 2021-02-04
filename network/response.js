@@ -9,18 +9,27 @@ const statusMessage = {
 
 exports.success = function ( res, status, ok, data ) {
 
-    return res.status( statusMessage[status] ).send({
+    return res.status( status ).send({
         ok: ok,
-        message: data,
+        msg: data,
     });
 
 }
 
 exports.error = function ( res, status, ok, details ) {
     
-    res.status(  statusMessage[ status ] ).send({
+    return res.status( status ).send({
         ok: ok,
-        error: details,
+        msg: details,
+    });
+
+}
+
+exports.validatorError = function ( res, status, ok, errors ) {
+    
+    return res.status( status ).send({
+        ok: ok,
+        msg: errors.mapped(),
     });
 
 }
