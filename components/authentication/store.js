@@ -6,36 +6,38 @@ const listAllAdmins = async() => {
     try {
         
         const adminList = await Admin.find({});
-        return Promise.resolve( "Users" );
+        return Promise.resolve( adminList );
 
     } catch (error) {        
         console.log( error );
-        Promise.reject('Ups anything was wrong, please contact with the manager');
+        return Promise.reject('Ups anything was wrong, please contact with the manager');
     }
 
 }
 
-const listAdmin = async( admin ) => {
+const listAdmin = async( email ) => {
+
+    console.log(email)
 
     try {
-        // To do: I necessary validate if the admin exist or not to resolve 
-        const adminList = await Admin.find( { nombre: admin } );
-        return Promise.resolve( 'User' );
+        // To do: It is necessary validate if the admin exist or not to resolve 
+        const adminList = await Admin.find( { email: email } );
+        return Promise.resolve( adminList );
 
     } catch (error) {        
         console.log( error );
-        Promise.reject('Ups anything was wrong, please contact with the manager');
+        return Promise.reject('Ups anything was wrong, please contact with the manager');
     }
 
 }
 
-const userExist = async( email, user ) => {
+const adminExist = async( email, user ) => {
 
     try {
 
         const emailRes = await Admin.findOne({ email });
         const userRes = await Admin.findOne({ user });
-
+        
         return Promise.resolve( { emai: emailRes, user: userRes} );
         
     } catch (error) {
@@ -45,11 +47,14 @@ const userExist = async( email, user ) => {
 
 }
 
-const addUser = async( admin ) => {
+const addAdmin = async( admin ) => {
 
     try {
 
-        const adminRes = new Admin( admin )
+        const adminRes = new Admin( admin );
+        await adminRes.save();
+        
+        return Promise.resolve( 'The admin saved success' );
         
     } catch (error) {
         console.log( error );
@@ -61,6 +66,6 @@ const addUser = async( admin ) => {
 module.exports = {
     listAllAdmins,
     listAdmin,
-    userExist,
-    addUser,
+    adminExist,
+    addAdmin,
 }

@@ -3,8 +3,6 @@ const responseApi = require('../network/response');
 
 const validator = ( req, res, next ) => {
 
-    console.log(' I am here ');
-
     const errors = validationResult( req );
 
     if( !errors.isEmpty() ){
@@ -12,12 +10,8 @@ const validator = ( req, res, next ) => {
         responseApi.validatorError( res, 400, false, errors )
 
     } else {
-
         next();
-
     }
-
-
 
 }
 

@@ -1,10 +1,8 @@
-
-const statusMessage = {
+/*
     200: 'Done',
     201: 'Created',
     400: 'Invalid format',
-    500: 'Internal error'
-}
+    500: 'Internal error' */
 
 
 exports.success = function ( res, status, ok, data ) {
