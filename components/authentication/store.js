@@ -31,14 +31,13 @@ const listAdmin = async( email ) => {
 
 }
 
-const adminExist = async( email, user ) => {
+const adminExist = async( email ) => {
 
     try {
 
         const emailRes = await Admin.findOne({ email });
-        const userRes = await Admin.findOne({ user });
         
-        return Promise.resolve( { emai: emailRes, user: userRes} );
+        return Promise.resolve( emailRes );
         
     } catch (error) {
         console.log( error );

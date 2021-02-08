@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { check } = require('express-validator')
-const { getAdmin, newAdmin } = require('./controller');
+const { getAdmin, newAdmin, adminLogin } = require('./controller');
 const validator = require( '../../middlewares/validator' );
 
 router.get('/', getAdmin );
@@ -17,5 +17,15 @@ router.post(
         ],
         newAdmin
 );
+
+router.get(
+        '/login', 
+        [
+                check('email', 'The email field must have email format').isEmail(),
+                check('password', 'The password field must have six charactes at least').isLength({ min: 6 }),
+                validator
+        ],
+        adminLogin
+        )
 
 module.exports = router;
