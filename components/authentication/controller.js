@@ -57,7 +57,7 @@ function newAdmin( req, res = response ) {
 
 }
 
-function adminLogin( req, res = response, next ) {
+function adminLogin( req, res = response ) {
     
     const { email, password } = req.query;
 
@@ -94,8 +94,19 @@ function adminLogin( req, res = response, next ) {
         )
 }
 
+
+const updateAdmin = ( req, res = response, ) => {
+
+    
+    res.status(500).json({
+        msg: 'Nothing here.'
+    });
+
+}
+
 module.exports = {
     getAdmin,
     newAdmin,
-    adminLogin
+    adminLogin,
+    updateAdmin
 }
