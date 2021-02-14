@@ -8,9 +8,12 @@ router.post(
     '/new', 
     [
         check('title', 'The title can not be empty.').isEmpty(),
-        check('description', 'The description can not be less than 120.').isLength({ min: 120 }),
+        check('description', 'The description can not be less than 120.').isEmpty(),
         check('image', 'The field image can not be empty.').isEmpty(),
         validator,
     ],
     newSubject
-    )
+);
+
+
+module.exports  = router;
