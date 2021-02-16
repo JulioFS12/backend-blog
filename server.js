@@ -5,6 +5,7 @@ const dbConnection = require('./database');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const routes = require('./network/routes');
+const { configMulter } = require('./middlewares/multer');
 
 app.use(cors());
 app.use(bodyParser.json());

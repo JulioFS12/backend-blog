@@ -4,7 +4,7 @@ const path = require('path');
 const storage = multer.diskStorage({
 
     destination: path.join(__dirname, '../public/uploads'),
-    filename: function (req, file, cb) {
+    filename: function (file, cb) {
 
         
         var filetypes = /jpeg|jpg|png|gif/;
@@ -25,5 +25,5 @@ const uploadImage = multer({
 }).single('image');
 
 
-module.exports = {storage, uploadImage};
+module.exports = { uploadImage };
 
